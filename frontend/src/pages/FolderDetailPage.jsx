@@ -23,13 +23,16 @@ export default function FolderDetailPage() {
     // for this user
     const fetchFolder = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/folders/${folderId}`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        });
+        const res = await fetch(
+          `https://filekeep-backend-production.up.railway.app/folders/${folderId}`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: "include",
+          }
+        );
 
         // Check authentication
         if (res.status === 401) {
@@ -70,11 +73,14 @@ export default function FolderDetailPage() {
     formData.append("folderId", folderId);
 
     try {
-      const res = await fetch("http://localhost:3000/upload", {
-        method: "POST",
-        credentials: "include",
-        body: formData,
-      });
+      const res = await fetch(
+        "https://filekeep-backend-production.up.railway.app/upload",
+        {
+          method: "POST",
+          credentials: "include",
+          body: formData,
+        }
+      );
 
       if (res.status === 401) {
         navigate("/login");
@@ -96,7 +102,7 @@ export default function FolderDetailPage() {
   const handleDelete = async (fileId) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/folders/${folderId}/${fileId}`,
+        `https://filekeep-backend-production.up.railway.app/folders/${folderId}/${fileId}`,
         {
           method: "DELETE",
           credentials: "include",

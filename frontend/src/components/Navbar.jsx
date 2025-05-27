@@ -5,10 +5,13 @@ export default function Navbar({ user, setUser }) {
 
   const handleLogout = async () => {
     try {
-      const res = await fetch("http://localhost:3000/logout", {
-        method: "POST",
-        credentials: "include",
-      });
+      const res = await fetch(
+        "https://filekeep-backend-production.up.railway.app/logout",
+        {
+          method: "POST",
+          credentials: "include",
+        }
+      );
       if (res.ok) {
         setUser(null);
         navigate("/");

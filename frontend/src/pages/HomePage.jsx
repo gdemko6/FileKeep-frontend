@@ -9,7 +9,7 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/me", {
+    fetch("https://filekeep-backend-production.up.railway.app/me", {
       credentials: "include",
     })
       .then((res) => (res.ok ? res.json() : null))

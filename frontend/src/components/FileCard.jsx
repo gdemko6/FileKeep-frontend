@@ -14,7 +14,7 @@ export default function FileCard({ file, onDelete }) {
       <div className="space-x-4">
         {/* Download file */}
         <a
-          href={`http://localhost:3000/files/${file.id}/download`}
+          href={`https://filekeep-backend-production.up.railway.app/files/${file.id}/download`}
           className="text-blue-500 hover:underline"
         >
           Download

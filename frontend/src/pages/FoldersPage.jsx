@@ -17,13 +17,16 @@ export default function FoldersPage() {
   useEffect(() => {
     const fetchFolders = async () => {
       try {
-        const res = await fetch("http://localhost:3000/folders", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        });
+        const res = await fetch(
+          "https://filekeep-backend-production.up.railway.app/folders",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: "include",
+          }
+        );
 
         if (res.status === 401) {
           navigate("/login");
@@ -48,14 +51,17 @@ export default function FoldersPage() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3000/folders", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify({ name: newFolderName }),
-      });
+      const res = await fetch(
+        "https://filekeep-backend-production.up.railway.app/folders",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify({ name: newFolderName }),
+        }
+      );
 
       if (res.status === 401) {
         navigate("/login");
@@ -75,7 +81,7 @@ export default function FoldersPage() {
   const handleDeleteFolder = async (folderIdToDelete) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/folders/${folderIdToDelete}`,
+        `https://filekeep-backend-production.up.railway.app/folders/${folderIdToDelete}`,
         {
           method: "DELETE",
           credentials: "include",

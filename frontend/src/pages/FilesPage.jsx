@@ -13,11 +13,14 @@ export default function FilesPage() {
   useEffect(() => {
     const fetchFiles = async () => {
       try {
-        const res = await fetch("http://localhost:3000/files", {
-          method: "GET",
-          headers: { "Content-Type": "application/json" },
-          credentials: "include",
-        });
+        const res = await fetch(
+          "https://filekeep-backend-production.up.railway.app/files",
+          {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+          }
+        );
 
         if (res.status === 401) {
           navigate("/login");
@@ -37,10 +40,13 @@ export default function FilesPage() {
 
   const handleDelete = async (fileId) => {
     try {
-      const res = await fetch(`http://localhost:3000/files/${fileId}`, {
-        method: "DELETE",
-        credentials: "include",
-      });
+      const res = await fetch(
+        `https://filekeep-backend-production.up.railway.app/files/${fileId}`,
+        {
+          method: "DELETE",
+          credentials: "include",
+        }
+      );
 
       if (res.status === 401) {
         navigate("/login");
