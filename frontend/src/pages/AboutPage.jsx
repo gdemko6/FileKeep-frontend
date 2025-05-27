@@ -2,19 +2,21 @@ import { useEffect } from "react";
 
 export default function AboutPage() {
   useEffect(() => {
-    document.title = "FileKeep | About";
+    document.title = "File Manager | About";
   }, []);
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 text-gray-800">
-      <h1 className="text-4xl font-bold text-blue-600 mb-6">About FileKeep</h1>
+      <h1 className="text-4xl font-bold text-blue-600 mb-6">
+        About File Manager
+      </h1>
 
       <p className="mb-4">
-        <strong>FileKeep</strong> is a full-stack file management application
-        built to showcase my ability to design and implement modern, scalable
-        web applications. It allows users to securely log in, create folders,
-        upload and manage files, and download them at any time — all with
-        protected routes and persistent sessions.
+        <strong>File Manager</strong> is a full-stack file management
+        application built to showcase my ability to design and implement modern,
+        scalable web applications. It allows users to securely log in, create
+        folders, upload and manage files, and download them at any time — all
+        with protected routes and persistent sessions.
       </p>
 
       <p className="mb-4">
@@ -39,10 +41,10 @@ export default function AboutPage() {
       </p>
 
       <p className="mb-4">
-        I built FileKeep to simulate a realistic product workflow, from setting
-        up a backend API to managing state in a React frontend. Throughout this
-        project, I gained deeper experience in authentication flows, file
-        handling, and frontend/backend integration.
+        I built File Manager to simulate a realistic product workflow, from
+        setting up a backend API to managing state in a React frontend.
+        Throughout this project, I gained deeper experience in authentication
+        flows, file handling, and frontend/backend integration.
       </p>
 
       <p>

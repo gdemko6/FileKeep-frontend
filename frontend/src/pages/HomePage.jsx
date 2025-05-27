@@ -5,7 +5,7 @@ export default function HomePage() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    document.title = "FileKeep | Home";
+    document.title = "File Manager | Home";
   }, []);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function HomePage() {
     <div className="flex flex-col items-center justify-center flex-grow mb-20">
       {/* Logo / Title */}
       <h1 className="text-5xl lg:text-8xl font-bold mb-8 text-blue-600">
-        FileKeep
+        File Manager
       </h1>
 
       <p className="text-gray-500 mb-8 text-center max-w-md italic lg:text-xl">

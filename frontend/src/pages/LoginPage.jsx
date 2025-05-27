@@ -11,7 +11,7 @@ export default function LoginPage({ setUser }) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    document.title = "FileKeep | Login";
+    document.title = "File Manager | Login";
   }, []);
 
   const handleSubmit = async (e) => {

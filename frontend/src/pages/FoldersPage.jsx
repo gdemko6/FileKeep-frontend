@@ -11,7 +11,7 @@ export default function FoldersPage() {
   const [newFolderName, setNewFolderName] = useState("");
 
   useEffect(() => {
-    document.title = "FileKeep | Your Folders";
+    document.title = "File Manager | Your Folders";
   }, []);
 
   useEffect(() => {

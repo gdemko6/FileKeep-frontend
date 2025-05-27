@@ -14,7 +14,7 @@ export default function FolderDetailPage() {
 
   useEffect(() => {
     if (folder.name) {
-      document.title = `FileKeep | ${folder.name}`;
+      document.title = `File Manager | ${folder.name}`;
     }
   }, [folder.name]);
 

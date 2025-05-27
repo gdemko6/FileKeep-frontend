@@ -11,7 +11,7 @@ export default function SignupPage() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    document.title = "FileKeep | Sign Up";
+    document.title = "File Manager | Sign Up";
   }, []);
 
   const handleSubmit = async (e) => {

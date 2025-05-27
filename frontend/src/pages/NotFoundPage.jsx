@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 export default function NotFoundPage() {
   useEffect(() => {
-    document.title = "FileKeep | 404 - Page Not Found";
+    document.title = "File Manager | 404 - Page Not Found";
   }, []);
 
   return (

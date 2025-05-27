@@ -28,7 +28,7 @@ export default function Navbar({ user, setUser }) {
     <nav className="flex items-center justify-between px-6 lg:px-8 py-4 bg-white shadow ">
       {/* Logo */}
       <NavLink to="/" className="text-2xl lg:text-3xl font-bold text-blue-600">
-        FileKeep
+        File Manager
       </NavLink>
 
       {/* Nav Links */}

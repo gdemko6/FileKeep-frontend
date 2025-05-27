@@ -7,7 +7,7 @@ export default function FilesPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "FileKeep | Your Files";
+    document.title = "File Manager | Your Files";
   }, []);
 
   useEffect(() => {
