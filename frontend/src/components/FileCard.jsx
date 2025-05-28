@@ -11,9 +11,14 @@ export default function FileCard({ file, onDelete, onDownload }) {
         {formatFilename(file.filename)}
       </span>
 
-      <div className="space-x-4">
+      <div className="space-x-4 text-md">
         {/* Download file */}
-        <button onClick={onDownload(file.id)}>Download</button>
+        <button
+          onClick={() => onDownload(file.id)}
+          className="text-blue-500 cursor-pointer hover:underline"
+        >
+          Download
+        </button>
         {/* Delete function is made and passed as a prop from FolderDetailPage */}
         <button
           onClick={() => {
