@@ -61,36 +61,6 @@ export default function FilesPage() {
     }
   };
 
-  const handleDownload = async (fileId) => {
-    try {
-      const res = await fetch(
-        `https://filekeep-backend-production.up.railway.app/files/${fileId}/download`,
-        {
-          method: "GET",
-          credentials: "include",
-        }
-      );
-
-      if (res.status === 401) {
-        navigate("/login");
-        return;
-      }
-
-      const blob = await res.blob();
-      const url = window.URL.createObjectURL(blob);
-
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "file";
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      window.URL.revokeObjectURL(url);
-    } catch (err) {
-      console.error("Error downloading file:", err.message);
-    }
-  };
-
   return (
     <div className="p-6 mx-auto w-full">
       <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">
@@ -104,12 +74,7 @@ export default function FilesPage() {
       ) : (
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-6">
           {files.map((file) => (
-            <FileCard
-              key={file.id}
-              file={file}
-              onDelete={handleDelete}
-              onDownload={handleDownload}
-            />
+            <FileCard key={file.id} file={file} onDelete={handleDelete} />
           ))}
         </ul>
       )}
