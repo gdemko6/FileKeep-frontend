@@ -1,7 +1,7 @@
 import React from "react";
 import formatFilename from "../utils/formatText";
 
-export default function FileCard({ file, onDelete }) {
+export default function FileCard({ file, onDelete, onDownload }) {
   return (
     <li className="flex justify-between items-center border border-blue-200 py-1 px-1.5 rounded shadow-sm bg-white">
       <span
@@ -13,13 +13,7 @@ export default function FileCard({ file, onDelete }) {
 
       <div className="space-x-4">
         {/* Download file */}
-        <a
-          href={`https://filekeep-backend-production.up.railway.app/files/${file.id}/download`}
-          className="text-blue-500 hover:underline"
-        >
-          Download
-        </a>
-
+        <button onClick={onDownload(file.id)}>Download</button>
         {/* Delete function is made and passed as a prop from FolderDetailPage */}
         <button
           onClick={() => {

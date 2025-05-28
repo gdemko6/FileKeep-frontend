@@ -127,6 +127,25 @@ export default function FolderDetailPage() {
     }
   };
 
+  const handleDownload = async (fileId) => {
+    try {
+      const res = await fetch(
+        `https://filekeep-backend-production.up.railway.app/files/${fileId}/download`,
+        {
+          method: "GET",
+          credentials: "include",
+        }
+      );
+
+      if (res.status === 401) {
+        navigate("/login");
+        return;
+      }
+    } catch (err) {
+      console.error("Error downloading file:", err.message);
+    }
+  };
+
   return (
     <div className="p-6 mx-auto w-full">
       <div className="flex justify-center text-nowrap">
@@ -177,6 +196,7 @@ export default function FolderDetailPage() {
               file={file}
               folderId={folderId}
               onDelete={handleDelete}
+              onDownload={handleDownload}
             />
           ))}
         </ul>
