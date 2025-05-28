@@ -141,6 +141,17 @@ export default function FolderDetailPage() {
         navigate("/login");
         return;
       }
+
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "file";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
     } catch (err) {
       console.error("Error downloading file:", err.message);
     }
