@@ -1,19 +1,9 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-export default function HomePage() {
-  const [user, setUser] = useState(null);
-
+export default function HomePage({ user }) {
   useEffect(() => {
     document.title = "File Manager | Home";
-  }, []);
-
-  useEffect(() => {
-    fetch("https://filekeep-backend-production.up.railway.app/me", {
-      credentials: "include",
-    })
-      .then((res) => (res.ok ? res.json() : null))
-      .then((data) => setUser(data?.user || null));
   }, []);
 
   return (

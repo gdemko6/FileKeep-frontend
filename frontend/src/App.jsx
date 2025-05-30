@@ -29,7 +29,7 @@ function App() {
         <Navbar user={user} setUser={setUser} />
         <main className="flex flex-grow justify-center">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<HomePage user={user} />} />
             <Route path="/folders" element={<FoldersPage />} />
             <Route path="/folders/:folderId" element={<FolderDetailPage />} />
             <Route path="/files" element={<FilesPage />} />
