@@ -69,7 +69,8 @@ export default function FilesPage() {
 
       {files.length === 0 ? (
         <p className="text-gray-500 text-center">
-          You haven't uploaded any files yet.
+          You haven't uploaded any files yet. Go to{" "}
+          <a href="/folders">Folders</a> to upload files.
         </p>
       ) : (
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-6">
