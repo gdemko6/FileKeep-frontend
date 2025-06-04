@@ -72,13 +72,10 @@ export default function FilesPage() {
           <p className="text-gray-500 text-center">
             You haven't uploaded any files yet.
           </p>
-          <p>
+          <p className="text-center">
             {" "}
             Go to{" "}
-            <a
-              className="text-center text-blue-600 hover:text-blue-300"
-              href="/folders"
-            >
+            <a className="text-blue-600 hover:text-blue-300" href="/folders">
               Folders
             </a>{" "}
             to upload files.{" "}
