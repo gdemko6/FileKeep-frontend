@@ -53,6 +53,18 @@ export default function FolderDetailPage() {
     fetchFolder();
   }, [folderId]);
 
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    if (file) {
+      setFileUpload(file);
+    }
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+
   const handleUpload = async (e) => {
     // Dont reload page
     e.preventDefault();
@@ -155,7 +167,11 @@ export default function FolderDetailPage() {
           onSubmit={handleUpload}
           className="mb-8 flex items-center justify-center gap-4 mx-1 sm:mx-4 lg:mx-10"
         >
-          <label className="px-1 sm:px-4 py-1 md:py-2 rounded cursor-pointer border border-black">
+          <label
+            onDrop={handleDrop}
+            onDragOver={handleDragOver}
+            className="px-1 sm:px-4 py-1 md:py-2 rounded cursor-pointer border border-black"
+          >
             <span className="ml-1 mr-4 italic text-sm md:text-md text-gray-600">
               {fileUpload ? fileUpload.name : "No file chosen"}
             </span>
