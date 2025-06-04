@@ -86,6 +86,10 @@ export default function FolderDetailPage() {
         navigate("/login");
         return;
       }
+      if (res.status === 413) {
+        toast.error("Files cannot exceed 50 MB");
+        return;
+      }
       if (res.status === 429) {
         toast.error("Daily Upload Limit Reached.");
         return;
