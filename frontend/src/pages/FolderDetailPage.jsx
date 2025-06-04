@@ -153,7 +153,11 @@ export default function FolderDetailPage() {
   };
 
   return (
-    <div className="p-6 mx-auto w-full">
+    <div
+      onDrop={handleDrop}
+      onDragOver={handleDragOver}
+      className="p-6 mx-auto w-full"
+    >
       <div className="flex justify-center text-nowrap">
         <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-center font-bold text-gray-800 mb-6 mx-1 sm:mx-4 lg:mx-10">
           Folder: {folder.name}
@@ -167,11 +171,7 @@ export default function FolderDetailPage() {
           onSubmit={handleUpload}
           className="mb-8 flex items-center justify-center gap-4 mx-1 sm:mx-4 lg:mx-10"
         >
-          <label
-            onDrop={handleDrop}
-            onDragOver={handleDragOver}
-            className="px-1 sm:px-4 py-1 md:py-2 rounded cursor-pointer border border-black"
-          >
+          <label className="px-1 sm:px-4 py-1 md:py-2 rounded cursor-pointer border border-black">
             <span className="ml-1 mr-4 italic text-sm md:text-md text-gray-600">
               {fileUpload ? fileUpload.name : "No file chosen"}
             </span>
