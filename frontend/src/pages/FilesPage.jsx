@@ -68,10 +68,19 @@ export default function FilesPage() {
       </h1>
 
       {files.length === 0 ? (
-        <p className="text-gray-500 text-center">
-          You haven't uploaded any files yet. Go to{" "}
-          <a href="/folders">Folders</a> to upload files.
-        </p>
+        <div>
+          <p className="text-gray-500 text-center">
+            You haven't uploaded any files yet.
+          </p>
+          <p>
+            {" "}
+            Go to{" "}
+            <a className="text-blue-300 hover:text-blue-600" href="/folders">
+              Folders
+            </a>{" "}
+            to upload files.{" "}
+          </p>
+        </div>
       ) : (
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-6">
           {files.map((file) => (
