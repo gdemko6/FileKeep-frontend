@@ -9,7 +9,8 @@ export default function FolderDetailPage() {
 
   const [folder, setFolder] = useState({});
   const [files, setFiles] = useState([]);
-  const [fileUpload, setFileUpload] = useState(null);
+  const [fileUpload, setFileUpload] = useState(null); // Is there a file waiting to be uploaded?
+  const [uploading, setUploading] = useState(false); // Is there a file being uploaded?
   const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
@@ -62,6 +63,8 @@ export default function FolderDetailPage() {
       return;
     }
 
+    setUploading(true);
+
     // If no folder id is found dont try to upload file
     if (!folderId) {
       setErrorMsg("Missing folder ID. Try refreshing the page.");
@@ -104,6 +107,8 @@ export default function FolderDetailPage() {
     } catch (err) {
       console.error("Error uploading file:", err.message);
       toast.error("Upload failed. Please try again.");
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -169,8 +174,9 @@ export default function FolderDetailPage() {
           <button
             type="submit"
             className="bg-blue-500 text-white px-1 sm:px-4 py-1 md:py-2 rounded hover:bg-blue-600"
+            disabled={uploading}
           >
-            Upload
+            {uploading ? "Uploading..." : "Upload"}
           </button>
         </form>
       </div>
