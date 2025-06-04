@@ -75,7 +75,10 @@ export default function FilesPage() {
           <p>
             {" "}
             Go to{" "}
-            <a className="text-blue-300 hover:text-blue-600" href="/folders">
+            <a
+              className="text-center text-blue-600 hover:text-blue-300"
+              href="/folders"
+            >
               Folders
             </a>{" "}
             to upload files.{" "}
