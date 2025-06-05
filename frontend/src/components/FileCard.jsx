@@ -1,5 +1,6 @@
 import React from "react";
 import formatFilename from "../utils/formatText";
+import { FiTrash2, FiDownload } from "react-icons/fi";
 
 export default function FileCard({ file, onDelete }) {
   return (
@@ -17,7 +18,7 @@ export default function FileCard({ file, onDelete }) {
           href={`https://filekeep-backend-production.up.railway.app/files/${file.id}/download`}
           className="text-blue-500 hover:underline"
         >
-          Download
+          <FiDownload size={18} />
         </a>
         {/* Delete function is made and passed as a prop from FolderDetailPage */}
         <button
@@ -29,7 +30,7 @@ export default function FileCard({ file, onDelete }) {
           }}
           className="text-red-500 cursor-pointer hover:underline"
         >
-          Delete
+          <FiTrash2 size={18} />
         </button>
       </div>
     </li>
