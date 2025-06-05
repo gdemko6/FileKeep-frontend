@@ -4,23 +4,25 @@ import { FiTrash2, FiDownload } from "react-icons/fi";
 
 export default function FileCard({ file, onDelete }) {
   return (
-    <li className="flex justify-between items-center border border-blue-200 py-1 px-1.5 rounded shadow-sm bg-white">
+    <li className="flex justify-between items-center border border-blue-200 px-3 py-2 rounded-lg shadow-sm bg-white">
       <span
         title={file.filename}
-        className="text-gray-800 font-bold italic mr-5 pl-1"
+        className="text-gray-800 font-medium italic truncate max-w-[60%]"
       >
         {formatFilename(file.filename)}
       </span>
 
-      <div className="space-x-4">
-        {/* Download file */}
+      <div className="flex items-center space-x-4">
+        {/* Download button */}
         <a
           href={`https://filekeep-backend-production.up.railway.app/files/${file.id}/download`}
-          className="text-blue-500 hover:underline"
+          title="Download"
+          className="text-blue-500 hover:text-blue-700"
         >
           <FiDownload size={18} />
         </a>
-        {/* Delete function is made and passed as a prop from FolderDetailPage */}
+
+        {/* Delete button */}
         <button
           onClick={() => {
             const confirmed = window.confirm(
@@ -28,7 +30,8 @@ export default function FileCard({ file, onDelete }) {
             );
             confirmed ? onDelete(file.id) : null;
           }}
-          className="text-red-500 cursor-pointer hover:underline"
+          title="Delete"
+          className="text-red-500 hover:text-red-700"
         >
           <FiTrash2 size={18} />
         </button>
