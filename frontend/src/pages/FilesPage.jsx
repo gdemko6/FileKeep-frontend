@@ -82,7 +82,7 @@ export default function FilesPage() {
           </p>
         </div>
       ) : (
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-6">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-6 px-2 mx-2">
           {files.map((file) => (
             <FileCard key={file.id} file={file} onDelete={handleDelete} />
           ))}
