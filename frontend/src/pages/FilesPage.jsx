@@ -62,7 +62,7 @@ export default function FilesPage() {
   };
 
   return (
-    <div className="flex items-center mx-auto w-full bg-blue-50 border-b border-blue-200 py-6 px-4 mb-6 shadow-lg">
+    <div className="p-6 mx-auto w-full">
       <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">
         All Files
       </h1>
