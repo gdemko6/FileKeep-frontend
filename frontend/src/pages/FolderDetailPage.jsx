@@ -154,7 +154,7 @@ export default function FolderDetailPage() {
 
   return (
     <div onDrop={handleDrop} onDragOver={handleDragOver} className="w-full">
-      <div className="flex justify-center items-center text-nowrap w-full bg-blue-50 border-b border-blue-200 py-6 px-6 mb-6 shadow-lg">
+      <div className="flex justify-center items-center w-full bg-blue-50 border-b border-blue-200 py-6 px-6 mb-6 shadow-lg">
         <h1 className="text-lg sm:text-2xl md:text-3xl text-center font-bold text-gray-800 mx-1 sm:mx-4 lg:mx-10">
           Folder: {folder.name}
         </h1>
