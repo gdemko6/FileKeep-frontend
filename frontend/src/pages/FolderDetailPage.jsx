@@ -158,18 +158,16 @@ export default function FolderDetailPage() {
       onDragOver={handleDragOver}
       className="p-6 mx-auto w-full"
     >
-      <div className="flex justify-center items-center text-nowrap w-full bg-blue-50 border-b border-blue-200 py-6 px-4 mb-6 shadow-xl">
+      <div className="flex justify-center items-center text-nowrap w-full bg-blue-50 border-b border-blue-200 py-6 px-4 mb-6 shadow-lg">
         <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-center font-bold text-gray-800 mx-1 sm:mx-4 lg:mx-10">
           Folder: {folder.name}
         </h1>
         {errorMsg && (
-          <div className="text-red-500 mb-4 font-medium text-center">
-            {errorMsg}
-          </div>
+          <div className="text-red-500 font-medium text-center">{errorMsg}</div>
         )}
         <form
           onSubmit={handleUpload}
-          className="mb-8 flex items-center justify-center gap-4 mx-1 sm:mx-4 lg:mx-10"
+          className="flex items-center justify-center gap-4 mx-1 sm:mx-4 lg:mx-10"
         >
           <label className="px-1 sm:px-4 py-1 md:py-2 rounded cursor-pointer border border-black">
             <span className="ml-1 mr-4 italic text-sm md:text-md text-gray-600">
