@@ -194,7 +194,7 @@ export default function FolderDetailPage() {
       {files.length === 0 ? (
         <p className="text-gray-500">This folder has no files yet.</p>
       ) : (
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-6 px-2">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-6 px-2 mx-2">
           {files.map((file) => (
             <FileCard
               key={file.id}
