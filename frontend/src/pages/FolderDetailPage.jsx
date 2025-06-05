@@ -158,7 +158,7 @@ export default function FolderDetailPage() {
       onDragOver={handleDragOver}
       className="p-6 mx-auto w-full"
     >
-      <div className="flex justify-center text-nowrap">
+      <div className="flex justify-center text-nowrap w-full bg-blue-50 border-b border-blue-200 py-6 px-4 mb-6 shadow-sm">
         <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-center font-bold text-gray-800 mb-6 mx-1 sm:mx-4 lg:mx-10">
           Folder: {folder.name}
         </h1>
