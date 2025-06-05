@@ -103,7 +103,7 @@ export default function FoldersPage() {
 
   return (
     <div className="w-full">
-      <div className="flex justify-between items-center w-full bg-blue-50 border-b border-blue-200 py-6 px-4 mb-6 shadow-sm">
+      <div className="flex justify-between items-center w-full bg-blue-50 border-b border-blue-200 py-6 px-6 mb-6 shadow-sm">
         <h1 className="text-3xl font-bold text-gray-800">Folders</h1>
         <button
           onClick={handleModalStatus}
