@@ -102,7 +102,8 @@ export default function FolderDetailPage() {
         return;
       }
       if (res.status === 413) {
-        toast.error("Files cannot exceed 50 MB");
+        const { error } = await res.json();
+        toast.error(error || "File too large");
         return;
       }
       if (res.status === 429) {
