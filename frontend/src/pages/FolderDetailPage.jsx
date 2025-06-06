@@ -102,8 +102,8 @@ export default function FolderDetailPage() {
         return;
       }
       if (res.status === 413) {
-        const { error } = await res.json();
-        toast.error(error || "File too large");
+        const { error, message } = await res.json();
+        toast.error(error || message || "File too large");
         return;
       }
       if (res.status === 429) {
